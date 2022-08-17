@@ -1,0 +1,147 @@
+:root {
+    --main-color: #29481c;
+    --main-color2: #578544;
+    --second-color: #e7ffe5;
+    --await-color: #fff2db;
+    --done-color: #d7ffb3;
+    --process-color: #c0faff;
+    --main-size: 16px;
+    --smaller-size: 14px;
+}/* Корневой псевдокласс для объеявления переменных: цвета и размер текста*/
+
+* {/*Селектор для всех элементов на странице*/
+    box-sizing: border-box;
+    font-family: "Lucida Fax"  , monospace;
+}
+
+.awaits{/*Класс для окраски статуса ожидания*/
+    background: var(--await-color);
+}
+
+.process{/*Класс для окраски статуса в процессе*/
+    background: var(--process-color);
+}
+
+.done{/*Класс для окраски статуса готов*/
+    background: var(--done-color);
+}
+
+h2{/*Размер шрифта и цвета для заголовка*/
+    font-size: 30px;
+    color: var(--main-color2);
+}
+
+ul {/*Отступы для тела списка*/
+    margin: 0 10px 0 0;
+    padding: 0;
+}
+
+ul li {/*Элементы списка: курсор, отступы и положение, цвет и размер шрифта*/
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 30px;
+    margin: 0 0 5px 0;
+    color: var(--main-color);
+
+    font-size: var(--main-size);
+
+    /*Обрезание излишнего текста троеточием и запрет на перенос пробелов*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+ul li:hover {
+    /*Подчеркивание элементов списка при наведении мыши*/
+    text-decoration: underline;
+}
+
+ul li.target {
+    /*При фокусе элемента списка подчеркивание и выделение жирным*/
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.header {
+    /*Контейнер под заголовок - отступ, цвет и центрирование текста*/
+    padding: 20px;
+    color: var(--main-color);
+    text-align: center;
+
+}
+
+.addBtn {
+    /*Класс для кнопок Поиска и Добавления новой задачи: отступы, цвета, центрирование текста и курсор*/
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+    background: var(--second-color);
+    color: var(--main-color);
+    text-align: center;
+    font-size: var(--main-size);
+    cursor: pointer;
+
+}
+
+.Btn:hover {
+    /*Подчеркивание текста при наведении мыши*/
+    text-decoration: underline;
+}
+
+#search {
+    /*Контейнер поиска - отступы, отсутсвие границы при нажатии мышью, размер шрифта*/
+    padding: 10px 10px 10px 10px;
+    margin: 5px 10px 10px 0;
+    border: none;
+    font-size: var(--smaller-size);
+}
+
+#list {
+    /*Контейнер под список - ширина и притяжение к левому краю*/
+    float: left;
+    width: 33%;
+}
+
+#note {
+    /*Контейнер под поле редактирования заметок - ширина, высота и притяжение к правому краю*/
+    float: right;
+    width: 67%;
+    height: 400px;
+}
+
+.MainArea {
+    /*Контейнер под контейнеры для списка и редактирования - ширина и позиция на экране*/
+    width: 80%;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+
+}
+
+#MainText {
+    /*Поле редактирования заметок - отсутсвие границы при нажатии, ширина и высота, запрет изменения размера, цвет и размер шрифта*/
+    border: none;
+    width: 100%;
+    height: 100%;
+    background-color: var(--second-color);
+    resize: none;
+    font-size: var(--smaller-size);
+}
+
+textarea, input{
+    /*Границы для полей ввода текста*/
+    outline: var(--main-color2) 2px dashed;
+}
+
+.EditBtn{
+    /*Класс для кнопок Сохранить, Удалить, и Кнопок-статусов: отступы, цвет, притяжение к левому краю, центрирование текста, курсор и размер шрифта*/
+    padding: 10px;
+    margin: 5px;
+
+    color: var(--main-color);
+    float: left;
+    text-align: center;
+    font-size: var(--smaller-size);
+    cursor: pointer;
+}
+

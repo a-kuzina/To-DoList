@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="index.css" /> <!-- Подключение стилей -->
+</head>
+<body>
+
+    <div class="header"> <!-- Контейнер под заголовок-->
+        <h2>My To Do List</h2> <!-- Заголовок -->
+        <input type="text" id="search" placeholder="Search..."> <!-- Поле поиска -->
+        <!-- Кнопки поиска и создания новой задачи-->
+        <span onclick="search()" class="addBtn Btn">Search!</span>
+        <span onclick="newTask()" class="addBtn Btn">Add new task</span>
+    </div>
+
+    <div class ="MainArea"> <!-- Контейнер под контейнеры списка и поля редактирвоания-->
+        <div id="list"> <!-- Контейнер под список-->
+            <ul id="myUL"> <!-- Список с предзаданными элементами списка (заметками) -->
+                <li class="awaits">My first very important task!</li>
+                <li class="done">My second very important task!</li>
+                <li class="process">My third very important task!</li>
+            </ul>
+        </div>
+
+        <div id="note"> <!-- Контейнер для Поля редактирования и кнопок -->
+            <!-- Поле редактирования заметки -->
+            <textarea id="MainText" placeholder="Create new task or edit here"></textarea>
+
+            <!-- Кнопки сохранения и удаления -->
+            <span onclick="saveTask()" class="EditBtn Btn">Save</span>
+            <span onclick="deleteTask()" class="EditBtn Btn">Delete</span>
+
+            <!-- Кнопки для изменения статуса заметки -->
+            <span onclick="taskStatus('awaits')" class="awaits EditBtn Btn">Awaits</span>
+            <span onclick="taskStatus('process')" class="process EditBtn Btn">In process</span>
+            <span onclick="taskStatus('done')" class="done EditBtn Btn">Done</span>
+
+        </div>
+    </div>
+
+    <script src="index.js"></script> <!-- Подключение скрипта -->
+</body>
+</html>
